@@ -1,0 +1,10 @@
+---
+baseurl: "http://ricston.com"
+languageCode: "en-us"
+title: "my new hugo site"
+theme: "ricstonTheme"
+taxonomies:
+  tag: "tags"
+  category: "categories"
+  series: "series"
+---
