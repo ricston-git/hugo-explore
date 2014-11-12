@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<!-- Derived from http://themes.trendywebstar.com/BusinessBox/ -->
+<!--[if lt IE 9]>
+<script type="text/javascript" src="/js/html5shiv.js"></script>
+<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>Ricston</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+{{ partial "style_tags.html" . }}
+{{ partial "script_tags.html" . }}
+</head>
+<body>
+<div id="container">
+    <div id="wrapp">
+        {{ partial "header/default_head_header.html" . }}
+        <div id="content">
+            <div style="height:20px"></div>
+            <div class="container">
+                <div class="medium-14 columns">
+                    <div class="row">
+                        <div class="medium-9 columns">
+
+                            {{ range first 10 .Data.Pages }}
+
+                            <h5><a href="{{ .Permalink }}">{{ .Title }}</a></h5>
+
+                            <div style="color:gray" class="row">
+                                {{ .Date.Format "Mon, Jan 2, 2006" }}
+                                {{ partial "tag.html" .}} -
+                                {{ .Params.author }}
+                            </div>
+
+
+                            {{ partial "summary.html" .}}
+                            <hr/>
+                            {{ end }}
+
+                            <div class="row">
+
+                                View older posts in <a href="/posts" title="Posts archive">the archive</a>...
+
+                            </div>
+                        </div>
+                        {{ partial "miniMessage.html" .}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+
